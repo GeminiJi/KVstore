@@ -10,11 +10,7 @@ public class BpStore {
 	private final ConcurrentHashMap<String, KeyValuePair> bpStore = new ConcurrentHashMap<>();
 
 	public void put(KeyValuePair kvp) {
-		if (bpStore.containsKey(kvp.getKey())) {
-			bpStore.put(kvp.getKey(), kvp);
-		} else {
-			bpStore.put(kvp.getKey(), kvp);
-		}
+		bpStore.put(kvp.getKey(), kvp);
 	}
 
 	public KeyValuePair get(String key) {
