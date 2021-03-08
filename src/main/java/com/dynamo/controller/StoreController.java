@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
@@ -187,7 +188,7 @@ public class StoreController {
 	}
 
 	@RequestMapping(value = "/set")
-	public Boolean set(@RequestParam String key, @RequestParam String val) {
+	public Boolean set(@RequestParam String key, @RequestParam String val) throws IOException {
 		// value : 0 is hashkey, 1 is value, 2 is IP:Port, 3 is counter
 		KeyValuePair kvp = new KeyValuePair(key, val);
 		store.put(kvp);
@@ -205,7 +206,7 @@ public class StoreController {
 	}
 
 	@RequestMapping(value = "/test")
-	public String test(@RequestParam String key, String ver) {
+	public String test(@RequestParam String key, String ver) throws IOException {
 		// value : 0 is hashkey, 1 is value, 2 is IP:Port, 3 is counter
 		String val = "123;test;192.168.50.194:8082;" +  ver;
 		KeyValuePair kvp = new KeyValuePair(key, val);
