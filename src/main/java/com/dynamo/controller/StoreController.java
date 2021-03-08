@@ -203,4 +203,14 @@ public class StoreController {
 		System.out.println("Backup Insert Key8080 : " + key + " Val : " +val);
 		return true;
 	}
+
+	@RequestMapping(value = "/test")
+	public String test(@RequestParam String key, String ver) {
+		// value : 0 is hashkey, 1 is value, 2 is IP:Port, 3 is counter
+		String val = "123;test;192.168.50.194:8082;" +  ver;
+		KeyValuePair kvp = new KeyValuePair(key, val);
+		store.put(kvp);
+		System.out.println("Insert Key8080 : " + key + " Val : " +val);
+		return "Test Success!";
+	}
 }
