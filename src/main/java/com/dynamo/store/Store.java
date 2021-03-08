@@ -11,9 +11,7 @@ public class Store {
 
 	public void put(KeyValuePair kvp) {
 		if (store.containsKey(kvp.getKey())) {
-			// if(kvp.getDateTime().isAfter(store.get(kvp.getKey()).getDateTime())) {
 			store.put(kvp.getKey(), kvp);
-			// }
 		} else {
 			store.put(kvp.getKey(), kvp);
 		}

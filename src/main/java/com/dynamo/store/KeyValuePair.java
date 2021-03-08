@@ -6,12 +6,10 @@ import java.io.Serializable;
 public class KeyValuePair implements Serializable {
 	private String key;
 	private String val;
-	// private DateTime dateTime;
 
 	public KeyValuePair(String key, String val) {
 		this.key = key;
 		this.val = val;
-		// this.dateTime = new DateTime();
 	}
 
 	public String getKey() {
@@ -30,17 +28,4 @@ public class KeyValuePair implements Serializable {
 		this.val = val;
 	}
 
-	// public DateTime getDateTime() {
-	// return dateTime;
-	// }
-	//
-	// public void setDateTime(DateTime dateTime) {
-	// this.dateTime = dateTime;
-	// }
-	//
-	// @Override
-	// public String toString() {
-	// return "KeyValuePair [key=" + key + ", val=" + val + ", dateTime=" + dateTime
-	// + "]";
-	// }
 }
