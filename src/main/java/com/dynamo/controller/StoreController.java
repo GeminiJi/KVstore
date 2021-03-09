@@ -1,7 +1,6 @@
 package com.dynamo.controller;
 
 import com.dynamo.properties.ServerNodeProperties;
-import com.dynamo.servers.Observer;
 import com.dynamo.servers.ServerNode;
 import com.dynamo.store.BpStore;
 import com.dynamo.store.KeyValuePair;

@@ -1,14 +1,9 @@
 package com.dynamo.controller;
 
 import com.dynamo.servers.ServerNode;
-import com.dynamo.store.BpStore;
 import com.dynamo.store.KeyValuePair;
-import com.dynamo.store.Store;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
@@ -34,7 +29,7 @@ public class RequestsController {
 	}
 
 	@Async
-	public void sendStoreSyncRequest(String addr, KeyValuePair kvp) throws JsonProcessingException {
+	public void sendStoreRecoverRequest(String addr, KeyValuePair kvp) throws JsonProcessingException {
 		if (addr == null || addr.equals("")) {
 			return;
 		}
