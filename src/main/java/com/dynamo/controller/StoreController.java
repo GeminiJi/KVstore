@@ -192,16 +192,17 @@ public class StoreController {
 		// value : 0 is hashkey, 1 is value, 2 is IP:Port, 3 is counter
 		KeyValuePair kvp = new KeyValuePair(key, val);
 		store.put(kvp);
-		System.out.println("Insert Key8080 : " + key + " Val : " +val);
+		System.out.println("Insert Key : " + key + " Val : " +val);
 		return true;
 	}
 
 	@RequestMapping(value = "/backup")
-	public Boolean backup(@RequestParam String key, @RequestParam String val) {
+	public Boolean backup(@RequestParam String key, @RequestParam String val) throws IOException {
 		// value : 0 is hashkey, 1 is value, 2 is IP:Port, 3 is counter
 		KeyValuePair kvp = new KeyValuePair(key, val);
 		bpStore.put(kvp);
-		System.out.println("Backup Insert Key8080 : " + key + " Val : " +val);
+		store.put(kvp);
+		System.out.println("Backup Insert Key : " + key + " Val : " +val);
 		return true;
 	}
 
@@ -211,7 +212,7 @@ public class StoreController {
 		String val = "123;test;192.168.50.194:8082;" +  ver;
 		KeyValuePair kvp = new KeyValuePair(key, val);
 		store.put(kvp);
-		System.out.println("Insert Key8080 : " + key + " Val : " +val);
+		System.out.println("Insert Key : " + key + " Val : " +val);
 		return "Test Success!";
 	}
 }
