@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com</groupId>
 	<artifactId>dynamo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.5</version>
 	<packaging>jar</packaging>
 	<name>dynamo</name>
 	<description>Distributed Key Value Store Dynamo</description>
